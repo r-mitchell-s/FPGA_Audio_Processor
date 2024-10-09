@@ -1,0 +1,64 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
+| Date         : Tue Oct  8 18:28:29 2024
+| Host         : EAS-CEE-1107-04 running 64-bit major release  (build 9200)
+| Command      : report_drc -file top_drc_opted.rpt -pb top_drc_opted.pb -rpx top_drc_opted.rpx
+| Design       : top
+| Device       : xc7z020clg484-1
+| Speed File   : -1
+| Design State : Synthesized
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max violations: <unlimited>
+             Violations found: 3
++---------+----------+------------------------------------------------+------------+
+| Rule    | Severity | Description                                    | Violations |
++---------+----------+------------------------------------------------+------------+
+| PLCK-12 | Error    | Clock Placer Checks                            | 1          |
+| PLIO-9  | Error    | Placement Constraints Check for IO constraints | 1          |
+| ZPS7-1  | Warning  | PS7 block required                             | 1          |
++---------+----------+------------------------------------------------+------------+
+
+2. REPORT DETAILS
+-----------------
+PLCK-12#1 Error
+Clock Placer Checks  
+Poor placement for routing between an IO pin and BUFG. 
+Resolution: Poor placement of an IO pin and a BUFG has resulted in the router using a non-dedicated path between the two.  There are several things that could trigger this DRC, each of which can cause unpredictable clock insertion delays that result in poor timing.  This DRC could be caused by any of the following: (a) a clock port was placed on a pin that is not a CCIO-pin (b)the BUFG has not been placed in the same half of the device or SLR as the CCIO-pin (c) a single ended clock has been placed on the N-Side of a differential pair CCIO-pin.
+ If this sub optimal condition is acceptable for this design, you may use the CLOCK_DEDICATED_ROUTE constraint in the .xdc file to demote this message to a WARNING. However, the use of this override is highly discouraged. These examples can be used directly in the .xdc file to override this clock rule.
+	< set_property CLOCK_DEDICATED_ROUTE FALSE [get_nets o_codec_mclock_OBUF] >
+
+	Clock Rule: rule_gclkio_bufg
+	Status: FAILED
+	Rule Description: An IOB driving a BUFG must use a CCIO in the same half side (top/bottom) of chip as the BUFG
+
+	i_codec_bit_clock_IBUF_inst (IBUF.O) is locked to AA6
+	o_codec_mclock_OBUF_BUFG_inst (BUFG.I) cannot be placed
+
+Related violations: <none>
+
+PLIO-9#1 Error
+Placement Constraints Check for IO constraints  
+A clock source i_codec_bit_clock has been LOCed to a N-Type CCIO : i_codec_bit_clock
+Related violations: <none>
+
+ZPS7-1#1 Warning
+PS7 block required  
+The PS7 cell must be used in this Zynq design in order to enable correct default configuration.
+Related violations: <none>
+
+

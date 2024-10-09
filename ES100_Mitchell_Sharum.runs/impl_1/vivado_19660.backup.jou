@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.1 (64-bit)
+# SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
+# IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
+# SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
+# Start of session at: Tue Oct  8 17:29:33 2024
+# Process ID: 19660
+# Current directory: C:/Users/ros3142/Desktop/RTL Projects/ES100_Mitchell_Sharum/ES100_Mitchell_Sharum.runs/impl_1
+# Command line: vivado.exe -log audio_passthrough.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source audio_passthrough.tcl -notrace
+# Log file: C:/Users/ros3142/Desktop/RTL Projects/ES100_Mitchell_Sharum/ES100_Mitchell_Sharum.runs/impl_1/audio_passthrough.vdi
+# Journal file: C:/Users/ros3142/Desktop/RTL Projects/ES100_Mitchell_Sharum/ES100_Mitchell_Sharum.runs/impl_1\vivado.jou
+# Running On        :EAS-CEE-1107-04
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19045
+# Processor Detail  :Intel(R) Xeon(R) Gold 5222 CPU @ 3.80GHz
+# CPU Frequency     :3790 MHz
+# CPU Physical cores:4
+# CPU Logical cores :8
+# Host memory       :68323 MB
+# Swap memory       :10200 MB
+# Total Virtual     :78524 MB
+# Available Virtual :51920 MB
+#-----------------------------------------------------------
+source audio_passthrough.tcl -notrace
