@@ -1,0 +1,89 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
+| Date         : Tue Nov 19 15:44:25 2024
+| Host         : EAS-EE-1111-02 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7z020
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    11 |
+|    Minimum number of control sets                        |    11 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |     9 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    11 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     0 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     1 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |    10 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              33 |           16 |
+| No           | No                    | Yes                    |               8 |            1 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |              94 |           22 |
+| Yes          | No                    | Yes                    |               0 |            0 |
+| Yes          | Yes                   | No                     |             144 |           37 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------------+--------------------------------------+---------------------------------+------------------+----------------+--------------+
+|               Clock Signal              |             Enable Signal            |         Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------------+--------------------------------------+---------------------------------+------------------+----------------+--------------+
+|  clk_gen/inst/axis_clk_clk_wiz_0_en_clk |                                      | reset_IBUF                      |                1 |              8 |         8.00 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/tx_data_r_shift[23]        |                                 |                6 |             23 |         3.83 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/tx_data_l_shift0_in[23]    |                                 |                6 |             23 |         3.83 |
+|  clk_gen/inst/axis_clk                  | vol_ctrl_inst/E[0]                   | i2s2_inst/rx_data_l[23]_i_1_n_0 |                5 |             24 |         4.80 |
+|  clk_gen/inst/axis_clk                  | vol_ctrl_inst/tx_axis_s_ready_reg[0] | i2s2_inst/rx_data_l[23]_i_1_n_0 |                8 |             24 |         3.00 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_r_shift_1          |                                 |                5 |             24 |         4.80 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_axis_m_last_reg_4       | i2s2_inst/rx_axis_m_last_reg_6  |                8 |             24 |         3.00 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_axis_m_last_reg_5       | i2s2_inst/rx_axis_m_last_reg_7  |                5 |             24 |         4.80 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_l_shift_2          |                                 |                5 |             24 |         4.80 |
+|  clk_gen/inst/axis_clk                  |                                      |                                 |               16 |             33 |         2.06 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_l0                 | i2s2_inst/rx_data_l[23]_i_1_n_0 |               11 |             48 |         4.36 |
++-----------------------------------------+--------------------------------------+---------------------------------+------------------+----------------+--------------+
+
+
