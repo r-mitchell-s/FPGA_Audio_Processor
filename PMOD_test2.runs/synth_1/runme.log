@@ -8,12 +8,12 @@
   **** SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
   **** IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
   **** SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
-  **** Start of session at: Tue Nov 19 15:43:10 2024
+  **** Start of session at: Fri Nov 22 21:08:36 2024
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source top.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 550.324 ; gain = 236.758
+create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 550.109 ; gain = 237.207
 Command: read_checkpoint -auto_incremental -incremental C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/utils_1/imports/synth_1/top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/utils_1/imports/synth_1/top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -27,34 +27,41 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4140
+INFO: [Synth 8-7075] Helper process launched with PID 9356
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1440.203 ; gain = 447.754
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1440.797 ; gain = 448.441
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6901] identifier 'resetn' is used before its declaration [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv:21]
-INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv:4]
-INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/synth_1/.Xil/Vivado-16176-EAS-EE-1111-02/realtime/clk_wiz_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/synth_1/.Xil/Vivado-16176-EAS-EE-1111-02/realtime/clk_wiz_0_stub.v:6]
+WARNING: [Synth 8-6901] identifier 'resetn' is used before its declaration [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv:19]
+INFO: [Synth 8-6157] synthesizing module 'top' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv:3]
+INFO: [Synth 8-6157] synthesizing module 'clk_wiz_0' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/synth_1/.Xil/Vivado-13332-EAS-EE-1111-02/realtime/clk_wiz_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'clk_wiz_0' (0#1) [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/synth_1/.Xil/Vivado-13332-EAS-EE-1111-02/realtime/clk_wiz_0_stub.v:6]
 INFO: [Synth 8-6157] synthesizing module 'axis_i2s2' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_i2s2.sv:4]
 INFO: [Synth 8-6155] done synthesizing module 'axis_i2s2' (0#1) [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_i2s2.sv:4]
+INFO: [Synth 8-6157] synthesizing module 'axis_delay_effect' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_delay_effect.sv:4]
+	Parameter DATA_WIDTH bound to: 24 - type: integer 
+	Parameter DELAY_LENGTH bound to: 22050 - type: integer 
+INFO: [Synth 8-6155] done synthesizing module 'axis_delay_effect' (0#1) [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_delay_effect.sv:4]
+WARNING: [Synth 8-689] width (24) of port connection 's_axis_data' does not match port width (32) of module 'axis_delay_effect' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv:88]
+WARNING: [Synth 8-689] width (24) of port connection 'm_axis_data' does not match port width (32) of module 'axis_delay_effect' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv:93]
 INFO: [Synth 8-6157] synthesizing module 'axis_volume_controller' [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_volume_controller.sv:4]
-	Parameter SWITCH_WIDTH bound to: 4 - type: integer 
+	Parameter SWITCH_WIDTH bound to: 2 - type: integer 
 	Parameter DATA_WIDTH bound to: 24 - type: integer 
 INFO: [Synth 8-6155] done synthesizing module 'axis_volume_controller' (0#1) [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_volume_controller.sv:4]
-INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv:4]
+INFO: [Synth 8-6155] done synthesizing module 'top' (0#1) [C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv:3]
+WARNING: [Synth 8-7129] Port m_axis_ready in module axis_delay_effect is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1554.445 ; gain = 561.996
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1567.457 ; gain = 575.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1554.445 ; gain = 561.996
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1567.457 ; gain = 575.102
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1554.445 ; gain = 561.996
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 1567.457 ; gain = 575.102
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1554.445 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1567.457 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -71,22 +78,22 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1617.855 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1650.633 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1617.855 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1650.633 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1617.855 ; gain = 625.406
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg484-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1617.855 ; gain = 625.406
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -95,28 +102,43 @@ Applied set_property IO_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  c:/
 Applied set_property CLOCK_BUFFER_TYPE = NONE for clk_100mhz. (constraint file  c:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0/clk_wiz_0_in_context.xdc, line 4).
 Applied set_property KEEP_HIERARCHY = SOFT for clk_gen. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1617.855 ; gain = 625.406
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axis_delay_effect'
+---------------------------------------------------------------------------------------------------
+                   State |                     New Encoding |                Previous Encoding 
+---------------------------------------------------------------------------------------------------
+                    IDLE |                              001 |                               00
+              APPLY_GAIN |                              010 |                               01
+         GENERATE_OUTPUT |                              100 |                               10
+---------------------------------------------------------------------------------------------------
+INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 'one-hot' in module 'axis_delay_effect'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1617.855 ; gain = 625.406
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
+	   2 Input   24 Bit       Adders := 2     
+	   2 Input   15 Bit       Adders := 2     
 	   2 Input    9 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
 +---Registers : 
 	               48 Bit    Registers := 2     
-	               32 Bit    Registers := 4     
+	               32 Bit    Registers := 5     
 	               25 Bit    Registers := 1     
-	               24 Bit    Registers := 4     
+	               24 Bit    Registers := 10    
+	               15 Bit    Registers := 1     
 	                9 Bit    Registers := 1     
-	                4 Bit    Registers := 3     
 	                3 Bit    Registers := 1     
-	                1 Bit    Registers := 7     
+	                2 Bit    Registers := 3     
+	                1 Bit    Registers := 10    
 +---Multipliers : 
 	              25x48  Multipliers := 2     
++---RAMs : 
+	             516K Bit	(22050 X 24 bit)          RAMs := 2     
 +---Muxes : 
 	   2 Input   48 Bit        Muxes := 3     
 	   3 Input   32 Bit        Muxes := 1     
@@ -125,6 +147,7 @@ Detailed RTL Component Info :
 	   2 Input   24 Bit        Muxes := 3     
 	   2 Input    1 Bit        Muxes := 10    
 	   4 Input    1 Bit        Muxes := 1     
+	   3 Input    1 Bit        Muxes := 6     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -171,6 +194,10 @@ DSP Report: register vol_ctrl_inst/multiplier_reg is absorbed into DSP vol_ctrl_
 DSP Report: register vol_ctrl_inst/ is absorbed into DSP vol_ctrl_inst/.
 DSP Report: operator vol_ctrl_inst/ is absorbed into DSP vol_ctrl_inst/.
 DSP Report: operator vol_ctrl_inst/ is absorbed into DSP vol_ctrl_inst/.
+DSP Report: Generating DSP delay_inst/feedback_sample_left1, operation Mode is: A*B.
+DSP Report: operator delay_inst/feedback_sample_left1 is absorbed into DSP delay_inst/feedback_sample_left1.
+DSP Report: Generating DSP delay_inst/feedback_sample_right1, operation Mode is: A*B.
+DSP Report: operator delay_inst/feedback_sample_right1 is absorbed into DSP delay_inst/feedback_sample_right1.
 DSP Report: Generating DSP vol_ctrl_inst/, operation Mode is: A2*B2.
 DSP Report: register vol_ctrl_inst/ is absorbed into DSP vol_ctrl_inst/.
 DSP Report: register vol_ctrl_inst/ is absorbed into DSP vol_ctrl_inst/.
@@ -201,42 +228,57 @@ DSP Report: register vol_ctrl_inst/multiplier_reg is absorbed into DSP vol_ctrl_
 DSP Report: register vol_ctrl_inst/ is absorbed into DSP vol_ctrl_inst/.
 DSP Report: operator vol_ctrl_inst/ is absorbed into DSP vol_ctrl_inst/.
 DSP Report: operator vol_ctrl_inst/ is absorbed into DSP vol_ctrl_inst/.
+INFO: [Synth 8-5784] Optimized 7 bits of RAM "delay_inst/delay_buffer_right_reg" due to constant propagation. Old ram width 24 bits, new ram width 17 bits.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1617.855 ; gain = 625.406
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
- Sort Area is  vol_ctrl_inst/_0 : 0 0 : 3137 4806 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_0 : 0 1 : 1669 4806 : Used 1 time 0
  Sort Area is  vol_ctrl_inst/_3 : 0 0 : 3137 4806 : Used 1 time 0
  Sort Area is  vol_ctrl_inst/_3 : 0 1 : 1669 4806 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_7 : 0 0 : 3137 4806 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_7 : 0 1 : 1669 4806 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_8 : 0 0 : 3137 4806 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_8 : 0 1 : 1669 4806 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_4 : 0 0 : 2667 4234 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_4 : 0 1 : 1567 4234 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_9 : 0 0 : 2667 4234 : Used 1 time 0
- Sort Area is  vol_ctrl_inst/_9 : 0 1 : 1567 4234 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_6 : 0 0 : 3137 4806 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_6 : 0 1 : 1669 4806 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_a : 0 0 : 3137 4806 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_a : 0 1 : 1669 4806 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_b : 0 0 : 3137 4806 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_b : 0 1 : 1669 4806 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_7 : 0 0 : 2667 4234 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_7 : 0 1 : 1567 4234 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_c : 0 0 : 2667 4234 : Used 1 time 0
+ Sort Area is  vol_ctrl_inst/_c : 0 1 : 1567 4234 : Used 1 time 0
+ Sort Area is  delay_inst/feedback_sample_left1_0 : 0 0 : 1302 1302 : Used 1 time 0
+ Sort Area is  delay_inst/feedback_sample_right1_2 : 0 0 : 1302 1302 : Used 1 time 0
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 
+Block RAM: Preliminary Mapping Report (see note below)
++------------+-----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top         | delay_inst/delay_buffer_left_reg  | 21 K x 24(READ_FIRST)  | W |   | 21 K x 24(WRITE_FIRST) |   | R | Port A and B     | 0      | 24     | 
+|top         | delay_inst/delay_buffer_right_reg | 21 K x 24(READ_FIRST)  | W |   | 21 K x 24(WRITE_FIRST) |   | R | Port A and B     | 0      | 17     | 
++------------+-----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|top         | A2*B2            | 18     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | (PCIN>>17)+A2*B2 | 15     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | (PCIN>>17)+A2*B2 | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | (PCIN>>17)+A2*B2 | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A2*B2            | 18     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | (PCIN>>17)+A2*B2 | 15     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | (PCIN>>17)+A2*B2 | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | (PCIN>>17)+A2*B2 | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-+------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name       | DSP Mapping      | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|top               | A2*B2            | 18     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | (PCIN>>17)+A2*B2 | 15     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | (PCIN>>17)+A2*B2 | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | (PCIN>>17)+A2*B2 | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|axis_delay_effect | A*B              | 24     | 8      | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|axis_delay_effect | A*B              | 24     | 8      | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 0    | 
+|top               | A2*B2            | 18     | 15     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | (PCIN>>17)+A2*B2 | 15     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | (PCIN>>17)+A2*B2 | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | A2*B2            | 18     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | (PCIN>>17)+A2*B2 | 18     | 9      | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
++------------------+------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -246,19 +288,75 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1617.855 ; gain = 625.406
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1617.855 ; gain = 625.406
+Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1650.633 ; gain = 658.277
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping Report
++------------+-----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|Module Name | RTL Object                        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | 
++------------+-----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+|top         | delay_inst/delay_buffer_left_reg  | 21 K x 24(READ_FIRST)  | W |   | 21 K x 24(WRITE_FIRST) |   | R | Port A and B     | 0      | 24     | 
+|top         | delay_inst/delay_buffer_right_reg | 21 K x 24(READ_FIRST)  | W |   | 21 K x 24(WRITE_FIRST) |   | R | Port A and B     | 0      | 17     | 
++------------+-----------------------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_16 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_17 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_18 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_19 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_20 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_21 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_22 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_left_reg_0_23 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_1 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_4 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_5 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_6 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_7 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_8 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_9 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_10 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_11 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_12 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_13 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_14 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_15 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
+INFO: [Synth 8-7052] The timing for the instance delay_inst/delay_buffer_right_reg_0_16 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -276,57 +374,59 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
 ---------------------------------------------------------------------------------
 
 DSP Final Report (the ' indicates corresponding REG is set)
-+------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|top         | A'*B'         | 17     | 14     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A'*B'         | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | PCIN>>17+A*B' | 0      | 8      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A'*B'         | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | PCIN>>17+A*B' | 0      | 8      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A'*B'         | 17     | 14     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A'*B'         | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | PCIN>>17+A*B' | 0      | 8      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | A'*B'         | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
-|top         | PCIN>>17+A*B' | 0      | 8      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
-+------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name       | DSP Mapping   | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|top               | A'*B'         | 17     | 14     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|axis_delay_effect | (A*B)'        | 24     | 8      | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|axis_delay_effect | (A*B)'        | 17     | 8      | -      | -      | 32     | 0    | 0    | -    | -    | -     | 0    | 1    | 
+|top               | A'*B'         | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | PCIN>>17+A*B' | 0      | 8      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | A'*B'         | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | PCIN>>17+A*B' | 0      | 8      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | A'*B'         | 17     | 14     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | A'*B'         | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | PCIN>>17+A*B' | 0      | 8      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | A'*B'         | 17     | 17     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 0    | 0    | 
+|top               | PCIN>>17+A*B' | 0      | 8      | -      | -      | 48     | 0    | 1    | -    | -    | -     | 0    | 0    | 
++------------------+---------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
@@ -337,46 +437,47 @@ Report BlackBoxes:
 +------+--------------+----------+
 
 Report Cell Usage: 
-+------+--------+------+
-|      |Cell    |Count |
-+------+--------+------+
-|1     |clk_wiz |     1|
-|2     |CARRY4  |    28|
-|3     |DSP48E1 |    10|
-|4     |LUT1    |    12|
-|5     |LUT2    |    39|
-|6     |LUT3    |   127|
-|7     |LUT4    |    68|
-|8     |LUT5    |    28|
-|9     |LUT6    |   109|
-|10    |FDRE    |   223|
-|11    |FDSE    |    48|
-|12    |IBUF    |     6|
-|13    |OBUF    |     7|
-+------+--------+------+
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |clk_wiz  |     1|
+|2     |CARRY4   |    47|
+|3     |DSP48E1  |    12|
+|5     |LUT1     |     6|
+|6     |LUT2     |   346|
+|7     |LUT3     |   152|
+|8     |LUT4     |   217|
+|9     |LUT5     |    24|
+|10    |LUT6     |    15|
+|11    |RAMB36E1 |    41|
+|12    |FDRE     |   564|
+|13    |FDSE     |    62|
+|14    |IBUF     |     6|
+|15    |OBUF     |     7|
++------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1650.633 ; gain = 658.277
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:19 ; elapsed = 00:00:24 . Memory (MB): peak = 1618.789 ; gain = 562.930
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1618.789 ; gain = 626.340
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:18 ; elapsed = 00:00:25 . Memory (MB): peak = 1650.633 ; gain = 575.102
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1650.633 ; gain = 658.277
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1618.789 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 38 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.017 . Memory (MB): peak = 1650.633 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 100 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1618.789 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1650.633 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: b9e116c
+Synth Design complete | Checksum: d7ad553
 INFO: [Common 17-83] Releasing license: Synthesis
-30 Infos, 2 Warnings, 1 Critical Warnings and 0 Errors encountered.
+76 Infos, 5 Warnings, 1 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 1618.789 ; gain = 1048.402
+synth_design: Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1650.633 ; gain = 1080.316
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1618.789 ; gain = 0.000
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1650.633 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/synth_1/top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file top_utilization_synth.rpt -pb top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Nov 19 15:43:50 2024...
+INFO: [Common 17-206] Exiting Vivado at Fri Nov 22 21:09:17 2024...

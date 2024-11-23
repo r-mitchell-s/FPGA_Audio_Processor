@@ -3,8 +3,8 @@
 # SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
 # IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
 # SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
-# Start of session at: Tue Nov 19 15:43:58 2024
-# Process ID: 10004
+# Start of session at: Fri Nov 22 21:11:08 2024
+# Process ID: 2756
 # Current directory: C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/impl_1
 # Command line: vivado.exe -log top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source top.tcl -notrace
 # Log file: C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/impl_1/top.vdi
@@ -17,8 +17,8 @@
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :16768 MB
-# Swap memory       :3337 MB
-# Total Virtual     :20105 MB
-# Available Virtual :9205 MB
+# Swap memory       :2550 MB
+# Total Virtual     :19318 MB
+# Available Virtual :5228 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

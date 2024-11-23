@@ -57,6 +57,11 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -74,6 +79,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
+  C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_delay_effect.sv
   C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_i2s2.sv
   C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_volume_controller.sv
   C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv
