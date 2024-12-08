@@ -1,9 +1,10 @@
 `timescale 1ns / 1ps
 `default_nettype none
+
 module top (
     input  wire        clk_100mhz,   // 100MHz input clock
     input  wire        reset,        // Active low reset from button
-    input  wire [3:0]  sw,          // 4 switches (2 for volume, 2 for delay mix)
+    input  wire [3:0]  sw,          // 4 switches (2 for volume, 1 for filter, 1 spare)
     
     // I2S2 Interface signals
     output wire        tx_mclk,
@@ -15,32 +16,30 @@ module top (
     output wire        rx_sclk,
     input  wire        rx_sdin
 );
-    // temp assignment test 
-    assign resetn = ~reset;
-    
-    // Internal signals
+    // Wire declarations
     wire        resetn;
     wire        axis_clk;        // 22.591MHz clock
     wire        locked;          // PLL lock signal
     wire        axis_resetn;     // Reset for I2S module
     
     // AXIS interface signals
-    wire [31:0] rx_axis_m_data;    // From I2S2 to delay effect
+    wire [31:0] rx_axis_m_data;    // From I2S2 to filter
     wire        rx_axis_m_valid;
     wire        rx_axis_m_ready;
     wire        rx_axis_m_last;
     
-    wire [31:0] delay_axis_m_data;  // From delay effect to volume controller
-    wire        delay_axis_m_valid;
-    wire        delay_axis_m_ready;
-    wire        delay_axis_m_last;
+    wire [31:0] filter_axis_m_data;  // From filter to volume controller
+    wire        filter_axis_m_valid;
+    wire        filter_axis_m_ready;
+    wire        filter_axis_m_last;
     
     wire [31:0] vol_axis_m_data;    // From volume controller to I2S2
     wire        vol_axis_m_valid;
     wire        vol_axis_m_ready;
     wire        vol_axis_m_last;
 
-    // Create stable reset once clock is locked
+    // Reset logic
+    assign resetn = ~reset;
     assign axis_resetn = resetn & locked;
 
     // Instantiate Clock Generator
@@ -76,49 +75,40 @@ module top (
         .rx_sdin(rx_sdin)
     );
 
-    // Instantiate Delay Effect
-    axis_delay_effect #(
-        .DATA_WIDTH(24),
-        .DELAY_LENGTH(22050)  // 0.5 second delay at 44.1kHz
-    ) delay_inst (
+    // Instantiate Low Pass Filter with switch control
+    axis_lowpass_filter filter_inst (
         .clk(axis_clk),
         .resetn(axis_resetn),
-        .sw(sw[3:2]),  // Use upper two switches for delay mix
+        .filter_enable(sw[2]),      // Use switch 2 for filter control
         
-        .s_axis_data(rx_axis_m_data[23:0]),
+        .s_axis_data(rx_axis_m_data),
         .s_axis_valid(rx_axis_m_valid),
         .s_axis_ready(rx_axis_m_ready),
         .s_axis_last(rx_axis_m_last),
         
-        .m_axis_data(delay_axis_m_data[23:0]),
-        .m_axis_valid(delay_axis_m_valid),
-        .m_axis_ready(delay_axis_m_ready),
-        .m_axis_last(delay_axis_m_last)
+        .m_axis_data(filter_axis_m_data),
+        .m_axis_valid(filter_axis_m_valid),
+        .m_axis_ready(filter_axis_m_ready),
+        .m_axis_last(filter_axis_m_last)
     );
-
-    // Handle upper bits of the delay data path
-    assign delay_axis_m_data[31:24] = 8'b0;
 
     // Instantiate Volume Controller
     axis_volume_controller #(
-        .SWITCH_WIDTH(2),        // Modified to use only 2 switches
-        .DATA_WIDTH(24)
+        .SWITCH_WIDTH(2),        // Use 2 switches for volume
+        .DATA_WIDTH(32)          // Full stereo width
     ) vol_ctrl_inst (
         .clk(axis_clk),
         .sw(sw[1:0]),           // Use lower two switches for volume
         
-        .s_axis_data(delay_axis_m_data[23:0]),
-        .s_axis_valid(delay_axis_m_valid),
-        .s_axis_ready(delay_axis_m_ready),
-        .s_axis_last(delay_axis_m_last),
+        .s_axis_data(filter_axis_m_data),    // Input from filter
+        .s_axis_valid(filter_axis_m_valid),
+        .s_axis_ready(filter_axis_m_ready),
+        .s_axis_last(filter_axis_m_last),
         
-        .m_axis_data(vol_axis_m_data[23:0]),
+        .m_axis_data(vol_axis_m_data),
         .m_axis_valid(vol_axis_m_valid),
         .m_axis_ready(vol_axis_m_ready),
         .m_axis_last(vol_axis_m_last)
     );
-
-    // Handle upper bits of the volume data path
-    assign vol_axis_m_data[31:24] = 8'b0;
 
 endmodule

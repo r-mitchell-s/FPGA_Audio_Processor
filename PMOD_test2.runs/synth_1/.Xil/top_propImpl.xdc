@@ -1,4 +1,4 @@
-set_property SRC_FILE_INFO {cfile:C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/constrs_1/new/constraints.xdc rfile:../../../PMOD_test2.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
+set_property SRC_FILE_INFO {cfile:C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/constrs_1/new/constraints.xdc rfile:../../../PMOD_test2.srcs/constrs_1/new/constraints.xdc id:1} [current_design]
 set_property src_info {type:XDC file:1 line:2 export:INPUT save:INPUT read:READ} [current_design]
 set_property -dict { PACKAGE_PIN Y9 IOSTANDARD LVCMOS33 } [get_ports clk_100mhz]
 set_property src_info {type:XDC file:1 line:6 export:INPUT save:INPUT read:READ} [current_design]

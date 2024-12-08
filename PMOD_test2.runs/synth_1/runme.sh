@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/synth_1'
+HD_PWD='C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

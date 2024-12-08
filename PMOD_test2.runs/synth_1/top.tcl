@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.runs/synth_1/top.tcl"
+  variable script "C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.runs/synth_1/top.tcl"
   variable category "vivado_synth"
 }
 
@@ -57,11 +57,7 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
-set_param checkpoint.writeSynthRtdsInDcp 1
 set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
-set_msg_config -id {Synth 8-256} -limit 10000
-set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg484-1
 
@@ -69,26 +65,26 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.cache/wt [current_project]
-set_property parent.project_path C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.cache/wt [current_project]
+set_property parent.project_path C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.xpr [current_project]
 set_property XPM_LIBRARIES XPM_CDC [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo c:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.cache/ip [current_project]
+set_property ip_output_repo c:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
-  C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_delay_effect.sv
-  C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_i2s2.sv
-  C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/axis_volume_controller.sv
-  C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/new/top.sv
+  C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/new/axis_i2s2.sv
+  C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/new/axis_lowpass_filter.sv
+  C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/new/axis_volume_controller.sv
+  C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/new/top.sv
 }
-read_ip -quiet C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
-set_property used_in_implementation false [get_files -all c:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_late.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
+read_ip -quiet C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/ip/clk_wiz_0/clk_wiz_0.xci
+set_property used_in_implementation false [get_files -all c:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_late.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.gen/sources_1/ip/clk_wiz_0/clk_wiz_0_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -99,12 +95,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/constrs_1/new/constraints.xdc
-set_property used_in_implementation false [get_files C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/constrs_1/new/constraints.xdc]
+read_xdc C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/constrs_1/new/constraints.xdc
+set_property used_in_implementation false [get_files C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/constrs_1/new/constraints.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental C:/Users/ros3142/Desktop/PMOD_test2/PMOD_test2.srcs/utils_1/imports/synth_1/top.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/utils_1/imports/synth_1/top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
