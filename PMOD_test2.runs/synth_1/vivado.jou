@@ -3,8 +3,8 @@
 # SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
 # IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
 # SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
-# Start of session at: Sun Dec  8 05:50:25 2024
-# Process ID: 9940
+# Start of session at: Sun Dec  8 06:54:20 2024
+# Process ID: 3116
 # Current directory: C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.runs/synth_1
 # Command line: vivado.exe -log top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source top.tcl
 # Log file: C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.runs/synth_1/top.vds
@@ -19,6 +19,6 @@
 # Host memory       :16768 MB
 # Swap memory       :2550 MB
 # Total Virtual     :19318 MB
-# Available Virtual :8735 MB
+# Available Virtual :9718 MB
 #-----------------------------------------------------------
 source top.tcl -notrace

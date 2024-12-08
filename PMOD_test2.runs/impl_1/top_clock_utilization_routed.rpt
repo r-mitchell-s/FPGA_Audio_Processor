@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
-| Date         : Sun Dec  8 05:51:59 2024
+| Date         : Sun Dec  8 06:56:05 2024
 | Host         : EAS-EE-1110-09 running 64-bit major release  (build 9200)
 | Command      : report_clock_utilization -file top_clock_utilization_routed.rpt
 | Design       : top
@@ -45,8 +45,8 @@ Table of Contents
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+----------------------+-------------------------------+----------------------------------------+
 | Global Id | Source Id | Driver Type/Pin | Constraint | Site          | Clock Region | Load Clock Region | Clock Loads | Non-Clock Loads | Clock Period | Clock                | Driver Pin                    | Net                                    |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+----------------------+-------------------------------+----------------------------------------+
-| g0        | src0      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y0 | n/a          |                 1 |         507 |               2 |       44.267 | axis_clk_clk_wiz_0_1 | clk_gen/inst/clkout1_buf/O    | clk_gen/inst/axis_clk                  |
-| g0        | src1      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y0 | n/a          |                 1 |         507 |               2 |       44.267 | axis_clk_clk_wiz_0_1 | clk_gen/inst/clkout1_buf/O    | clk_gen/inst/axis_clk                  |
+| g0        | src0      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y0 | n/a          |                 1 |         571 |               2 |       44.267 | axis_clk_clk_wiz_0_1 | clk_gen/inst/clkout1_buf/O    | clk_gen/inst/axis_clk                  |
+| g0        | src1      | BUFGCTRL/O      | None       | BUFGCTRL_X0Y0 | n/a          |                 1 |         571 |               2 |       44.267 | axis_clk_clk_wiz_0_1 | clk_gen/inst/clkout1_buf/O    | clk_gen/inst/axis_clk                  |
 | g1        | src0      | BUFH/O          | None       | BUFHCE_X0Y0   | X0Y0         |                 1 |           8 |               0 |       44.267 | axis_clk_clk_wiz_0_1 | clk_gen/inst/clkout1_buf_en/O | clk_gen/inst/axis_clk_clk_wiz_0_en_clk |
 +-----------+-----------+-----------------+------------+---------------+--------------+-------------------+-------------+-----------------+--------------+----------------------+-------------------------------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered
@@ -75,7 +75,7 @@ Table of Contents
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
 | Clock Region Name | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail | Used | Avail |
 +-------------------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+------+-------+
-| X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  467 |  2500 |  266 |  1000 |    0 |    60 |    0 |    30 |    0 |    60 |
+| X0Y0              |    2 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |  531 |  2500 |  327 |  1000 |    0 |    60 |    0 |    30 |    0 |    60 |
 | X1Y0              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  3200 |    0 |   850 |    0 |    60 |    0 |    30 |    0 |    40 |
 | X0Y1              |    0 |    12 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |     0 |    0 |  1200 |    0 |   400 |    0 |    20 |    0 |    10 |    0 |    20 |
 | X1Y1              |    0 |    12 |    0 |     4 |    0 |     2 |    0 |     4 |    0 |     1 |    0 |     1 |    0 |     0 |    0 |     0 |    0 |    50 |    0 |    50 |    0 |  2600 |    0 |   850 |    0 |    60 |    0 |    30 |    0 |    40 |
@@ -104,7 +104,7 @@ All Modules
 +-----------+-----------------+-------------------+----------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------+
 | Global Id | Driver Type/Pin | Driver Region (D) | Clock                | Period (ns) | Waveform (ns)  | Slice Loads | IO Loads | Clocking Loads | GT Loads | Net                   |
 +-----------+-----------------+-------------------+----------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------+
-| g0        | BUFGCTRL/O      | n/a               | axis_clk_clk_wiz_0_1 |      44.267 | {0.000 22.134} |         507 |        2 |              0 |        0 | clk_gen/inst/axis_clk |
+| g0        | BUFGCTRL/O      | n/a               | axis_clk_clk_wiz_0_1 |      44.267 | {0.000 22.134} |         571 |        2 |              0 |        0 | clk_gen/inst/axis_clk |
 +-----------+-----------------+-------------------+----------------------+-------------+----------------+-------------+----------+----------------+----------+-----------------------+
 * Slice Loads column represents load cell count of all cell types other than IO, GT and clock resources
 ** IO Loads column represents load cell count of IO types
@@ -117,7 +117,7 @@ All Modules
 +----+------+----+-----------------------+
 | Y2 |    0 |  0 |                     - |
 | Y1 |    0 |  0 |                     - |
-| Y0 |  509 |  0 |                     0 |
+| Y0 |  573 |  0 |                     0 |
 +----+------+----+-----------------------+
 
 
@@ -150,7 +150,7 @@ All Modules
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 | Global Id | Track | Driver Type/Pin | Constraint | Clock Loads | Non-Clock Loads | FF  | Memory LUTs | RAMB | DSP | GT | MMCM | PLL | Hard IP | Net                                    |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
-| g0        | n/a   | BUFGCTRL/O      | None       |         507 |               2 | 459 |          48 |    0 |   0 |  0 |    0 |   0 |       0 | clk_gen/inst/axis_clk                  |
+| g0        | n/a   | BUFGCTRL/O      | None       |         571 |               2 | 523 |          48 |    0 |   0 |  0 |    0 |   0 |       0 | clk_gen/inst/axis_clk                  |
 | g1        | n/a   | BUFH/O          | None       |           8 |               0 |   8 |           0 |    0 |   0 |  0 |    0 |   0 |       0 | clk_gen/inst/axis_clk_clk_wiz_0_en_clk |
 +-----------+-------+-----------------+------------+-------------+-----------------+-----+-------------+------+-----+----+------+-----+---------+----------------------------------------+
 * Clock Loads column represents cell count of net connects that connect to a clock pin. Internal cell leaf pins are not considered

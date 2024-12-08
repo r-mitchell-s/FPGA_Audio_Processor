@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.1.1 (win64) Build 5094488 Fri Jun 14 08:59:21 MDT 2024
-| Date         : Sun Dec  8 05:51:39 2024
+| Date         : Sun Dec  8 06:55:44 2024
 | Host         : EAS-EE-1110-09 running 64-bit major release  (build 9200)
 | Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
 | Design       : top
@@ -23,11 +23,11 @@ Table of Contents
 +----------------------------------------------------------+-------+
 |                          Status                          | Count |
 +----------------------------------------------------------+-------+
-| Total control sets                                       |    12 |
-|    Minimum number of control sets                        |    12 |
+| Total control sets                                       |    16 |
+|    Minimum number of control sets                        |    16 |
 |    Addition due to synthesis replication                 |     0 |
 |    Addition due to physical synthesis replication        |     0 |
-| Unused register locations in slices containing registers |    13 |
+| Unused register locations in slices containing registers |    29 |
 +----------------------------------------------------------+-------+
 * Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
 ** Run report_qor_suggestions for automated merging and remapping suggestions
@@ -39,15 +39,15 @@ Table of Contents
 +--------------------+-------+
 |       Fanout       | Count |
 +--------------------+-------+
-| Total control sets |    12 |
+| Total control sets |    16 |
 | >= 0 to < 4        |     0 |
-| >= 4 to < 6        |     0 |
+| >= 4 to < 6        |     1 |
 | >= 6 to < 8        |     0 |
 | >= 8 to < 10       |     1 |
 | >= 10 to < 12      |     0 |
 | >= 12 to < 14      |     0 |
 | >= 14 to < 16      |     0 |
-| >= 16              |    11 |
+| >= 16              |    14 |
 +--------------------+-------+
 * Control sets can be remapped at either synth_design or opt_design
 
@@ -58,33 +58,37 @@ Table of Contents
 +--------------+-----------------------+------------------------+-----------------+--------------+
 | Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
 +--------------+-----------------------+------------------------+-----------------+--------------+
-| No           | No                    | No                     |              21 |            9 |
+| No           | No                    | No                     |              22 |            8 |
 | No           | No                    | Yes                    |               8 |            1 |
-| No           | Yes                   | No                     |               0 |            0 |
-| Yes          | No                    | No                     |             167 |           42 |
+| No           | Yes                   | No                     |               5 |            2 |
+| Yes          | No                    | No                     |             167 |           40 |
 | Yes          | No                    | Yes                    |               0 |            0 |
-| Yes          | Yes                   | No                     |             271 |           60 |
+| Yes          | Yes                   | No                     |             329 |           69 |
 +--------------+-----------------------+------------------------+-----------------+--------------+
 
 
 4. Detailed Control Set Information
 -----------------------------------
 
-+-----------------------------------------+---------------------------------------+---------------------+------------------+----------------+--------------+
-|               Clock Signal              |             Enable Signal             |   Set/Reset Signal  | Slice Load Count | Bel Load Count | Bels / Slice |
-+-----------------------------------------+---------------------------------------+---------------------+------------------+----------------+--------------+
-|  clk_gen/inst/axis_clk_clk_wiz_0_en_clk |                                       | reset_IBUF          |                1 |              8 |         8.00 |
-|  clk_gen/inst/axis_clk                  |                                       |                     |                9 |             21 |         2.33 |
-|  clk_gen/inst/axis_clk                  | i2s2_inst/tx_data_l_shift0_in[23]     |                     |                4 |             23 |         5.75 |
-|  clk_gen/inst/axis_clk                  | i2s2_inst/tx_data_r_shift[23]         |                     |                3 |             23 |         7.67 |
-|  clk_gen/inst/axis_clk                  | vol_ctrl_inst/m_axis_last_reg_0[0]    | filter_inst/reset_0 |                3 |             24 |         8.00 |
-|  clk_gen/inst/axis_clk                  | vol_ctrl_inst/m_axis_last_reg_1[0]    | filter_inst/reset_0 |                3 |             24 |         8.00 |
-|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_l_shift[23]_i_1_n_0 |                     |                6 |             24 |         4.00 |
-|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_r_shift_0           |                     |                6 |             24 |         4.00 |
-|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_l0                  | filter_inst/reset_0 |               10 |             48 |         4.80 |
-|  clk_gen/inst/axis_clk                  | filter_inst/E[0]                      |                     |               11 |             49 |         4.45 |
-|  clk_gen/inst/axis_clk                  | i2s2_inst/m_axis_valid01_out          |                     |               12 |             72 |         6.00 |
-|  clk_gen/inst/axis_clk                  | i2s2_inst/m_axis_valid01_out          | filter_inst/reset_0 |               44 |            175 |         3.98 |
-+-----------------------------------------+---------------------------------------+---------------------+------------------+----------------+--------------+
++-----------------------------------------+---------------------------------------+--------------------------------+------------------+----------------+--------------+
+|               Clock Signal              |             Enable Signal             |        Set/Reset Signal        | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------------+---------------------------------------+--------------------------------+------------------+----------------+--------------+
+|  clk_gen/inst/axis_clk                  |                                       | filter_inst/RSTP               |                2 |              5 |         2.50 |
+|  clk_gen/inst/axis_clk_clk_wiz_0_en_clk |                                       | reset_IBUF                     |                1 |              8 |         8.00 |
+|  clk_gen/inst/axis_clk                  | clip_inst/left_clipped[19]            | filter_inst/RSTP               |                3 |             17 |         5.67 |
+|  clk_gen/inst/axis_clk                  | clip_inst/left_clipped[19]            | filter_inst/m_axis_valid_reg_0 |                3 |             17 |         5.67 |
+|  clk_gen/inst/axis_clk                  |                                       |                                |                8 |             22 |         2.75 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/tx_data_l_shift0_in[23]     |                                |                4 |             23 |         5.75 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/tx_data_r_shift[23]         |                                |                5 |             23 |         4.60 |
+|  clk_gen/inst/axis_clk                  | clip_inst/p_4_in                      | filter_inst/RSTP               |                4 |             24 |         6.00 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_l_shift[23]_i_1_n_0 |                                |                5 |             24 |         4.80 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_r_shift_0           |                                |                7 |             24 |         3.43 |
+|  clk_gen/inst/axis_clk                  | vol_ctrl_inst/m_axis_last_reg_1[0]    | filter_inst/RSTP               |                4 |             24 |         6.00 |
+|  clk_gen/inst/axis_clk                  | vol_ctrl_inst/m_axis_last_reg_0[0]    | filter_inst/RSTP               |                5 |             24 |         4.80 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/rx_data_l0                  | filter_inst/RSTP               |               11 |             48 |         4.36 |
+|  clk_gen/inst/axis_clk                  | clip_inst/E[0]                        |                                |                7 |             49 |         7.00 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/m_axis_valid01_out          |                                |               12 |             72 |         6.00 |
+|  clk_gen/inst/axis_clk                  | i2s2_inst/m_axis_valid01_out          | filter_inst/RSTP               |               39 |            175 |         4.49 |
++-----------------------------------------+---------------------------------------+--------------------------------+------------------+----------------+--------------+
 
 

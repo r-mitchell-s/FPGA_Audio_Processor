@@ -75,6 +75,7 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
+  C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/new/axis_distortion_effect.sv
   C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/new/axis_i2s2.sv
   C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/new/axis_lowpass_filter.sv
   C:/Users/ros3142/Desktop/ES100/FPGA_Audio_Processor/PMOD_test2.srcs/sources_1/new/axis_volume_controller.sv
