@@ -7,7 +7,7 @@ Senior design project completed for partial fulfillment of the Bachelor of Scien
 # High Level Description
 The Zedboard Zynq7000 interfaces with a PMOD I2S2 audio codec for analog-to-digital conversion from a 3.5mm sound source. The digitized sound signal (interprereted via I2S protocol) is sent through a signal path consisting of several custom effects modules before being routed out to the DAC on the PMOD i2S2 peripheral board and then to an output device.
 
-# Implementation Details
+# Directory Structure
 
-# Usage (Simulation and Build)
+# Usage and Build
 
