@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # FPGA_Audio_Processor
-Senior thesis project for Harvard University's ES100. Focused on the implementation of DSP algorithms on the Zedboard Zynq7000, which takes a stereo audio nput via 3.5mm jack sampling and processing the signal before routing it through a DAC to an output audio device.
-=======
+Senior thesis project for Harvard University's ES100. Focused on the implementation of DSP algorithms on the Zedboard Zynq7000, which takes a stereo audio input via 3.5mm jack sampling and processing the signal before routing it through a DAC to an output audio device.
+
 # Background
 Senior design project completed for partial fulfillment of the Bachelor of Sciences Degree in the department of Electrical Engineering at Harvard University. The project consists of the deisgn and synthesis of an audio processor on an FPGA for live, low-latency musical effects applications.
 
@@ -11,4 +10,4 @@ The Zedboard Zynq7000 interfaces with a PMOD I2S2 audio codec for analog-to-digi
 # Implementation Details
 
 # Usage (Simulation and Build)
->>>>>>> 7f2a48bd231990bf56bdfe1c80cd5576282e945c
+
