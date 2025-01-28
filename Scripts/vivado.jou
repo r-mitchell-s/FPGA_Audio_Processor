@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2024.1.1 (64-bit)
+# SW Build 5094488 on Fri Jun 14 08:59:21 MDT 2024
+# IP Build 5091682 on Fri Jun 14 16:55:04 MDT 2024
+# SharedData Build 5094118 on Fri Jun 14 01:09:43 MDT 2024
+# Start of session at: Tue Jan 28 16:38:29 2025
+# Process ID: 5592
+# Current directory: C:/Users/ros3142/Desktop/FPGA_Audio_Processor/Scripts
+# Command line: vivado.exe -mode gui -source ./run.tcl
+# Log file: C:/Users/ros3142/Desktop/FPGA_Audio_Processor/Scripts/vivado.log
+# Journal file: C:/Users/ros3142/Desktop/FPGA_Audio_Processor/Scripts\vivado.jou
+# Running On        :EAS-EE-1110-09
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :19045
+# Processor Detail  :11th Gen Intel(R) Core(TM) i5-11600K @ 3.90GHz
+# CPU Frequency     :3912 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16768 MB
+# Swap memory       :2550 MB
+# Total Virtual     :19318 MB
+# Available Virtual :11114 MB
+#-----------------------------------------------------------
+start_gui
+source ./run.tcl

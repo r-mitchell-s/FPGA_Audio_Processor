@@ -3,7 +3,8 @@ set project_name "FPGA_Audio_Processor"
 set project_dir [file normalize ".vivado"]
 
 # create the project and set the part number for Zynq7000
-current_project ${project_name} ${project_dir} -part xc7z020clg484-1
+current_project ${project_name} ${project_dir} 
+#-part xc7z020clg484-1
 
 # set project properties
 set_property target_language Verilog [current_project]

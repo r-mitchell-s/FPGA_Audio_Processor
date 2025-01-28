@@ -4,8 +4,8 @@
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 # check if we're in the correct directory
-if [[ ! -f "${SCRIPT_DIR}/run_all.tcl" ]]; then
-    echo "Error: run_all.tcl not found in ${SCRIPT_DIR}"
+if [[ ! -f "${SCRIPT_DIR}/run.tcl" ]]; then
+    echo "Error: run.tcl not found in ${SCRIPT_DIR}"
     exit 1
 fi
 
@@ -15,9 +15,9 @@ if ! command -v vivado &> /dev/null; then
     exit 1
 fi
 
-# run Vivado in batch mode with the main TCL script
+# run Vivado in GUI mode with the main TCL script
 cd "${SCRIPT_DIR}"
-vivado -mode batch -source ./run_all.tcl
+vivado -mode gui -source ./run.tcl
 
 # check if the build was successful
 if [ $? -eq 0 ]; then
