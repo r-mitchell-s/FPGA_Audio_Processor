@@ -2,6 +2,9 @@
 set project_name "FPGA_Audio_Processor"
 set project_dir [file normalize ".vivado"]
 
+# route backup, logs, .vivado, etc to a clean different file
+source handle_metadata.tcl
+
 # create the project and set the part number for Zynq7000
 create_project ${project_name} ${project_dir} -part xc7z020clg484-1 -force
 
