@@ -1,6 +1,6 @@
 ## Clock signal from ZedBoard's 100MHz oscillator
 set_property -dict { PACKAGE_PIN Y9 IOSTANDARD LVCMOS33 } [get_ports clk_100mhz]
-create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} [get_ports clk_100mhz]
+# create_clock -period 10.000 -name sys_clk_pin -waveform {0.000 5.000} [get_ports clk_100mhz]
 
 ## Reset signal - connect to BTNU (Up button)
 set_property -dict { PACKAGE_PIN T18 IOSTANDARD LVCMOS33 } [get_ports reset]
