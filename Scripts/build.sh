@@ -3,7 +3,7 @@
 # cd to the directory where the script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# check if we're in the correct directory
+# quit if we are not in the correct directory
 if [[ ! -f "${SCRIPT_DIR}/run.tcl" ]]; then
     echo "Error: run.tcl not found in ${SCRIPT_DIR}"
     exit 1
