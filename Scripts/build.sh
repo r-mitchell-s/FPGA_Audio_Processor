@@ -1,28 +1,29 @@
 #!/bin/bash
 
-# cd to the directory where the script is located
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# quit if we are not in the correct directory
-if [[ ! -f "${SCRIPT_DIR}/run.tcl" ]]; then
-    echo "Error: run.tcl not found in ${SCRIPT_DIR}"
-    exit 1
-fi
-
-# check if Vivado is in PATH
+# make sure vivado is in PATH
 if ! command -v vivado &> /dev/null; then
-    echo "Vivado not found in PATH. Please source Vivado settings before running this script."
-    exit 1
+    echo "ERROR: Vivado is not in PATH"
+    exit 1 
 fi
 
-# run Vivado in GUI mode with the main TCL script
-cd "${SCRIPT_DIR}"
-vivado -mode gui -source ./run.tcl
+# create project name with current datetime
+datetime=$(date +"%Y_%m_%d_%H_%M_%S")
+script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+project_dir="${script_dir}/../Project_${datetime}"
 
-# check if the build was successful
+# create the project directory
+mkdir -p "${project_dir}"
+
+# change to the project directory before running Vivado
+cd "${project_dir}"
+
+# run the tcl script
+vivado -mode batch -source "${script_dir}/create_project.tcl"
+
+# verify status to user
 if [ $? -eq 0 ]; then
-    echo "Project build completed successfully!"
-else
-    echo "Project build failed. Check the Vivado logs for details."
+    echo "SUCCESS: FPGA programmed successfully"
+else    
+    echo "ERROR: FPGA was not able to be programmed"
     exit 1
 fi
