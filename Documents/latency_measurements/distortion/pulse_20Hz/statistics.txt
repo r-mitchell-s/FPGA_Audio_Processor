@@ -1,0 +1,6 @@
+Latency Statistics for distortion with pulse at 20Hz:
+Mean: 566.5 탎
+Std Dev: 6.9 탎
+Min: 555.4 탎
+Max: 577.5 탎
+Valid measurements: 20/20

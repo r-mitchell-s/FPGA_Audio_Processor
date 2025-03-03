@@ -41,7 +41,7 @@ time.sleep(0.5)
 # Configure vertical settings
 scope.write("CH1:SCALE 0.5")  # Adjust voltage scale for CH1
 time.sleep(0.5)
-scope.write("CH2:SCALE 0.5")  # Adjust voltage scale for CH2
+scope.write("CH2:SCALE .1")  # Adjust voltage scale for CH2
 time.sleep(0.5)
 
 # Configure horizontal timebase - focus on a single pulse
