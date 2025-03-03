@@ -1,0 +1,6 @@
+Latency Statistics for lowpass with pulse at 20Hz:
+Mean: 735.4 탎
+Std Dev: 9.0 탎
+Min: 720.1 탎
+Max: 750.7 탎
+Valid measurements: 20/20

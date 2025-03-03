@@ -1,0 +1,8 @@
+SNR Statistics for both with sine at 20Hz:
+Mean Input SNR (dB): 44.45
+Std Dev Input SNR (dB): 0.88
+Mean Output SNR (dB): 34.69
+Std Dev Output SNR (dB): 2.35
+Mean SNR Change (dB): -9.76
+Std Dev SNR Change (dB): 1.63
+Valid Measurements: 10/10
