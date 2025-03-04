@@ -1,0 +1,8 @@
+SNR Statistics for bypass with sine at 1kHz:
+Mean Input SNR (dB): 42.39
+Std Dev Input SNR (dB): 0.41
+Mean Output SNR (dB): 36.78
+Std Dev Output SNR (dB): 0.53
+Mean SNR Change (dB): -5.60
+Std Dev SNR Change (dB): 0.28
+Valid Measurements: 10/10

@@ -1,0 +1,8 @@
+SNR Statistics for distortion with sine at 20Hz:
+Mean Input SNR (dB): 45.36
+Std Dev Input SNR (dB): 0.81
+Mean Output SNR (dB): 45.10
+Std Dev Output SNR (dB): 1.96
+Mean SNR Change (dB): -0.26
+Std Dev SNR Change (dB): 1.21
+Valid Measurements: 10/10
