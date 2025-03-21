@@ -1,0 +1,22 @@
+SNR Statistics for ring_modulator with sine at 1kHz:
+Test signal amplitude: 1.8 Vpp
+Test date/time: 2025-03-20 23:10:46
+
+Mean Input SNR (dB): 71.89
+Std Dev Input SNR (dB): 0.28
+Mean Output SNR (dB): 64.49
+Std Dev Output SNR (dB): 0.25
+Mean SNR Change (dB): -7.41
+Std Dev SNR Change (dB): 0.32
+Mean Input THD (dB): -50.65
+Mean Output THD (dB): -39.07
+Mean Input Vpp (V): 3.53
+Mean Output Vpp (V): 2.02
+Valid Measurements: 10/10
+Test Date/Time: 2025-03-20 23:10:46
+Mean Corrected Input SNR (dB): nan
+Std Dev Corrected Input SNR (dB): nan
+Mean Corrected Output SNR (dB): nan
+Std Dev Corrected Output SNR (dB): nan
+Mean Corrected SNR Change (dB): nan
+Std Dev Corrected SNR Change (dB): nan

@@ -1,0 +1,22 @@
+SNR Statistics for lowpass with sine at 1kHz:
+Test signal amplitude: 1.8 Vpp
+Test date/time: 2025-03-20 23:05:57
+
+Mean Input SNR (dB): 72.00
+Std Dev Input SNR (dB): 0.23
+Mean Output SNR (dB): 57.67
+Std Dev Output SNR (dB): 0.25
+Mean SNR Change (dB): -14.33
+Std Dev SNR Change (dB): 0.22
+Mean Input THD (dB): -48.74
+Mean Output THD (dB): -36.43
+Mean Input Vpp (V): 3.53
+Mean Output Vpp (V): 0.74
+Valid Measurements: 10/10
+Test Date/Time: 2025-03-20 23:05:57
+Mean Corrected Input SNR (dB): nan
+Std Dev Corrected Input SNR (dB): nan
+Mean Corrected Output SNR (dB): nan
+Std Dev Corrected Output SNR (dB): nan
+Mean Corrected SNR Change (dB): nan
+Std Dev Corrected SNR Change (dB): nan

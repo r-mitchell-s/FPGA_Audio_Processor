@@ -1,0 +1,22 @@
+SNR Statistics for noise_gate with sine at 1kHz:
+Test signal amplitude: 1.8 Vpp
+Test date/time: 2025-03-20 23:15:27
+
+Mean Input SNR (dB): 72.00
+Std Dev Input SNR (dB): 0.19
+Mean Output SNR (dB): 65.10
+Std Dev Output SNR (dB): 0.39
+Mean SNR Change (dB): -6.90
+Std Dev SNR Change (dB): 0.46
+Mean Input THD (dB): -51.88
+Mean Output THD (dB): -38.68
+Mean Input Vpp (V): 3.53
+Mean Output Vpp (V): 2.14
+Valid Measurements: 10/10
+Test Date/Time: 2025-03-20 23:15:27
+Mean Corrected Input SNR (dB): nan
+Std Dev Corrected Input SNR (dB): nan
+Mean Corrected Output SNR (dB): nan
+Std Dev Corrected Output SNR (dB): nan
+Mean Corrected SNR Change (dB): nan
+Std Dev Corrected SNR Change (dB): nan

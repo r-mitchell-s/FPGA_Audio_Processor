@@ -1,0 +1,22 @@
+SNR Statistics for distortion with sine at 1kHz:
+Test signal amplitude: 1.8 Vpp
+Test date/time: 2025-03-20 23:07:54
+
+Mean Input SNR (dB): 72.05
+Std Dev Input SNR (dB): 0.21
+Mean Output SNR (dB): 63.46
+Std Dev Output SNR (dB): 0.34
+Mean SNR Change (dB): -8.59
+Std Dev SNR Change (dB): 0.37
+Mean Input THD (dB): -50.55
+Mean Output THD (dB): -14.95
+Mean Input Vpp (V): 3.55
+Mean Output Vpp (V): 1.21
+Valid Measurements: 10/10
+Test Date/Time: 2025-03-20 23:07:54
+Mean Corrected Input SNR (dB): nan
+Std Dev Corrected Input SNR (dB): nan
+Mean Corrected Output SNR (dB): nan
+Std Dev Corrected Output SNR (dB): nan
+Mean Corrected SNR Change (dB): nan
+Std Dev Corrected SNR Change (dB): nan

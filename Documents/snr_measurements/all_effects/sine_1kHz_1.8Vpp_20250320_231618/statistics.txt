@@ -1,0 +1,22 @@
+SNR Statistics for all_effects with sine at 1kHz:
+Test signal amplitude: 1.8 Vpp
+Test date/time: 2025-03-20 23:17:39
+
+Mean Input SNR (dB): 71.94
+Std Dev Input SNR (dB): 0.23
+Mean Output SNR (dB): 55.04
+Std Dev Output SNR (dB): 0.21
+Mean SNR Change (dB): -16.90
+Std Dev SNR Change (dB): 0.38
+Mean Input THD (dB): -52.33
+Mean Output THD (dB): -33.49
+Mean Input Vpp (V): 3.53
+Mean Output Vpp (V): 0.69
+Valid Measurements: 10/10
+Test Date/Time: 2025-03-20 23:17:39
+Mean Corrected Input SNR (dB): nan
+Std Dev Corrected Input SNR (dB): nan
+Mean Corrected Output SNR (dB): nan
+Std Dev Corrected Output SNR (dB): nan
+Mean Corrected SNR Change (dB): nan
+Std Dev Corrected SNR Change (dB): nan
