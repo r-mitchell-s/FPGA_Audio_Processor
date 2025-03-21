@@ -1,8 +1,0 @@
-SNR Statistics for lowpass with sine at 1kHz:
-Mean Input SNR (dB): 43.71
-Std Dev Input SNR (dB): 0.34
-Mean Output SNR (dB): 27.83
-Std Dev Output SNR (dB): 1.25
-Mean SNR Change (dB): -15.88
-Std Dev SNR Change (dB): 1.47
-Valid Measurements: 10/10

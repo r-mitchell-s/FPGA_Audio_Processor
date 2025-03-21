@@ -1,0 +1,8 @@
+Latency Statistics for lowpass with pulse at 1Hz:
+Measurement timestamp: 20250320_021228
+
+Mean: 739.1 탎
+Std Dev: 13.5 탎
+Min: 712.8 탎
+Max: 760.8 탎
+Valid measurements: 10/10

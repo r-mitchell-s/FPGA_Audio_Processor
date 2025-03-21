@@ -1,0 +1,9 @@
+Latency Statistics for ring_modulator with puse at 1Hz:
+Measurement timestamp: 20250320_220149
+
+Mean: 544.5 탎
+Std Dev: 3.2 탎
+Min: 539.4 탎
+Max: 549.0 탎
+Valid measurements: 10/10 trials attempted
+Valid latency range: 450 - 900 탎

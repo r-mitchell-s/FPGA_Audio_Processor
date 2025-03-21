@@ -1,0 +1,9 @@
+Latency Statistics for noise_gate with puse at 1Hz:
+Measurement timestamp: 20250320_220419
+
+Mean: 535.4 탎
+Std Dev: 5.1 탎
+Min: 529.9 탎
+Max: 544.8 탎
+Valid measurements: 10/10 trials attempted
+Valid latency range: 450 - 900 탎
