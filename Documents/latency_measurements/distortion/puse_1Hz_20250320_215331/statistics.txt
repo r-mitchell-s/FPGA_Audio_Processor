@@ -1,0 +1,9 @@
+Latency Statistics for distortion with puse at 1Hz:
+Measurement timestamp: 20250320_215331
+
+Mean: 536.4 탎
+Std Dev: 3.8 탎
+Min: 531.0 탎
+Max: 542.0 탎
+Valid measurements: 10/10 trials attempted
+Valid latency range: 450 - 900 탎

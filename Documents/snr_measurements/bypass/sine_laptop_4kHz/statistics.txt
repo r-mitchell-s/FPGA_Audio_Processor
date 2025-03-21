@@ -1,8 +1,0 @@
-SNR Statistics for bypass with sine at laptop_4kHz:
-Mean Input SNR (dB): 45.11
-Std Dev Input SNR (dB): 0.36
-Mean Output SNR (dB): 39.02
-Std Dev Output SNR (dB): 0.23
-Mean SNR Change (dB): -6.09
-Std Dev SNR Change (dB): 0.54
-Valid Measurements: 10/10

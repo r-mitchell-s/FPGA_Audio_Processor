@@ -1,0 +1,9 @@
+Latency Statistics for all_effects with puse at 1Hz:
+Measurement timestamp: 20250320_220830
+
+Mean: 781.5 탎
+Std Dev: 18.1 탎
+Min: 752.9 탎
+Max: 808.0 탎
+Valid measurements: 10/10 trials attempted
+Valid latency range: 450 - 900 탎

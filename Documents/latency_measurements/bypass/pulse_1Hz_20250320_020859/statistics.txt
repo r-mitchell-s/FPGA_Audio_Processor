@@ -1,0 +1,8 @@
+Latency Statistics for bypass with pulse at 1Hz:
+Measurement timestamp: 20250320_020859
+
+Mean: 511.2 탎
+Std Dev: 2.3 탎
+Min: 507.2 탎
+Max: 514.2 탎
+Valid measurements: 10/10

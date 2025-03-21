@@ -1,0 +1,9 @@
+Latency Statistics for bypass with puse at 1Hz:
+Measurement timestamp: 20250320_214359
+
+Mean: 534.0 탎
+Std Dev: 2.9 탎
+Min: 529.3 탎
+Max: 538.7 탎
+Valid measurements: 10/10 trials attempted
+Valid latency range: 450 - 900 탎

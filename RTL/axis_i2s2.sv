@@ -1,15 +1,9 @@
-// - - - - - I2S2 MODULE - - - - - //
-// 
-// Inter-IC Sound module that interfaces the PMOD I2S2 with the FPGA. Handles reception of data from PMOD ADC to FPGA, as well as 
-// transmission from FPGA to PMOD DAC. The serial data stream that comes into the FPGA is converted in this module into I2S
-// frames
-
 `timescale 1ns / 1ps
 `default_nettype none
 
 module axis_i2s2 (
-    input  wire        axis_clk,                        // required clock frequency: approx 22.591MHz
-    input  wire        axis_resetn,                     // active low reset
+    input  wire        axis_clk,     // require: approx 22.591MHz
+    input  wire        axis_resetn,
     
     input  wire [31:0] tx_axis_s_data,
     input  wire        tx_axis_s_valid,

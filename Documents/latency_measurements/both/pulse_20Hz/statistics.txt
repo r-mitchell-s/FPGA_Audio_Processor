@@ -1,6 +1,0 @@
-Latency Statistics for both with pulse at 20Hz:
-Mean: 953.6 탎
-Std Dev: 9.1 탎
-Min: 938.9 탎
-Max: 966.1 탎
-Valid measurements: 20/20

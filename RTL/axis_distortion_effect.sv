@@ -1,5 +1,6 @@
 `timescale 1ns / 1ps
 `default_nettype none
+
 module axis_clip_distortion (
     input wire clk,
     input wire resetn,
@@ -17,11 +18,10 @@ module axis_clip_distortion (
     input  wire m_axis_ready,
     output reg m_axis_last = 1'b0
 );
-
-    // Much lower threshold and pre-gain
-    localparam signed [23:0] CLIP_THRESHOLD = 24'h080000;  // About 12.5% of full scale
-    localparam signed [23:0] NEG_THRESHOLD = -24'h080000;
-    localparam signed [23:0] PRE_GAIN = 24'h020000;  // 2x gain
+    // Simple hard clipping thresholds
+    // Adjust these values to control where clipping occurs
+    localparam signed [23:0] POS_THRESHOLD = 24'h400000;  // 25% of full scale
+    localparam signed [23:0] NEG_THRESHOLD = -24'h400000; // -25% of full scale
 
     // Control signals
     wire m_new_word = (m_axis_valid && m_axis_ready);
@@ -29,16 +29,13 @@ module axis_clip_distortion (
     wire s_new_word = (s_axis_valid && s_axis_ready);
     wire s_new_packet = (s_new_word && s_axis_last);
     reg s_new_packet_r = 1'b0;
-
-    // Internal signals for gain stage
-    reg signed [47:0] left_gained, right_gained;
-    reg signed [23:0] left_clipped, right_clipped;
-
+    
+    // Register delay of packet signal
     always @(posedge clk) begin
         s_new_packet_r <= s_new_packet;
     end
-
-    // Control logic
+    
+    // Control logic for AXIS protocol
     always @(posedge clk) begin
         if (!resetn) begin
             m_axis_valid <= 1'b0;
@@ -50,13 +47,13 @@ module axis_clip_distortion (
                 s_axis_ready <= 1'b0;
             else if (m_new_packet)
                 s_axis_ready <= 1'b1;
-
+                
             // Valid logic
             if (s_new_packet_r)
                 m_axis_valid <= 1'b1;
             else if (m_new_packet)
                 m_axis_valid <= 1'b0;
-
+                
             // Last logic
             if (m_new_packet)
                 m_axis_last <= 1'b0;
@@ -64,44 +61,36 @@ module axis_clip_distortion (
                 m_axis_last <= 1'b1;
         end
     end
-
-    // Data processing with gain and aggressive clipping
+    
+    // Pure hard clipping with single-cycle latency
     always @(posedge clk) begin
         if (!resetn) begin
             m_axis_data <= 32'b0;
-            left_gained <= 0;
-            right_gained <= 0;
-            left_clipped <= 0;
-            right_clipped <= 0;
         end else if (s_axis_valid && s_axis_ready) begin
             if (distortion_enable) begin
-                // Apply gain first
-                left_gained <= $signed(s_axis_data[23:0]) * $signed(PRE_GAIN);
-                right_gained <= $signed(s_axis_data[31:8]) * $signed(PRE_GAIN);
+                // Extract audio sample
+                reg signed [23:0] audio_in;
+                reg signed [23:0] audio_out;
                 
-                // Clip the gained signal
-                // Left channel
-                if (left_gained[47:24] > CLIP_THRESHOLD)
-                    left_clipped <= CLIP_THRESHOLD;
-                else if (left_gained[47:24] < NEG_THRESHOLD)
-                    left_clipped <= NEG_THRESHOLD;
+                // Get input sample
+                audio_in = $signed(s_axis_data[23:0]);
+                
+                // Apply simple threshold-based hard clipping
+                // This preserves the exact input below threshold
+                if (audio_in > POS_THRESHOLD)
+                    audio_out = POS_THRESHOLD;
+                else if (audio_in < NEG_THRESHOLD)
+                    audio_out = NEG_THRESHOLD;
                 else
-                    left_clipped <= left_gained[47:24];
-
-                // Right channel
-                if (right_gained[47:24] > CLIP_THRESHOLD)
-                    right_clipped <= CLIP_THRESHOLD;
-                else if (right_gained[47:24] < NEG_THRESHOLD)
-                    right_clipped <= NEG_THRESHOLD;
-                else
-                    right_clipped <= right_gained[47:24];
-
-                // Combine channels
-                m_axis_data <= {right_clipped, left_clipped};
+                    audio_out = audio_in; // Pass through unmodified when within threshold
+                
+                // Preserve upper 8 bits
+                m_axis_data <= {s_axis_data[31:24], audio_out};
             end else begin
+                // Pass through when distortion is disabled
                 m_axis_data <= s_axis_data;
             end
         end
     end
-
+    
 endmodule

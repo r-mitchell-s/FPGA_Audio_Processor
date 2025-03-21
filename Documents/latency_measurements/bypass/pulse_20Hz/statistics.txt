@@ -1,6 +1,0 @@
-Latency Statistics for bypass with pulse at 20Hz:
-Mean: 519.4 탎
-Std Dev: 1.8 탎
-Min: 516.6 탎
-Max: 523.0 탎
-Valid measurements: 20/20

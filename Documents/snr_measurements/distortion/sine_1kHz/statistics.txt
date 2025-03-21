@@ -1,8 +1,0 @@
-SNR Statistics for distortion with sine at 1kHz:
-Mean Input SNR (dB): 43.44
-Std Dev Input SNR (dB): 0.30
-Mean Output SNR (dB): 38.17
-Std Dev Output SNR (dB): 0.16
-Mean SNR Change (dB): -5.27
-Std Dev SNR Change (dB): 0.38
-Valid Measurements: 10/10

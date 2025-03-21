@@ -1,0 +1,8 @@
+Latency Statistics for ring_modulator with pulse at 1Hz:
+Measurement timestamp: 20250320_022226
+
+Mean: 436.2 탎
+Std Dev: 191.2 탎
+Min: 11.9 탎
+Max: 612.5 탎
+Valid measurements: 10/10

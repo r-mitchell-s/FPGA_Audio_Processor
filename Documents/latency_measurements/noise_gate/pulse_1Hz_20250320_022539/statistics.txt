@@ -1,0 +1,8 @@
+Latency Statistics for noise_gate with pulse at 1Hz:
+Measurement timestamp: 20250320_022539
+
+Mean: 524.9 탎
+Std Dev: 4.9 탎
+Min: 518.0 탎
+Max: 534.5 탎
+Valid measurements: 10/10

@@ -1,0 +1,8 @@
+Latency Statistics for all_effects with pulse at 1Hz:
+Measurement timestamp: 20250320_031635
+
+Mean: 1232.1 탎
+Std Dev: 360.7 탎
+Min: 619.2 탎
+Max: 1497.3 탎
+Valid measurements: 10/10
