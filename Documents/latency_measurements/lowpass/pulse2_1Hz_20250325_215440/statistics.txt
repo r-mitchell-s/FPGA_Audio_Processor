@@ -1,0 +1,9 @@
+Latency Statistics for lowpass with pulse2 at 1Hz:
+Measurement timestamp: 20250325_215440
+
+Mean: 754.3 탎
+Std Dev: 12.8 탎
+Min: 714.9 탎
+Max: 784.2 탎
+Valid measurements: 100/100 trials attempted
+Valid latency range: 450 - 1000 탎

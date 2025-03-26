@@ -1,0 +1,9 @@
+Latency Statistics for all_effects with pulse at 1Hz:
+Measurement timestamp: 20250325_222449
+
+Mean: 747.3 탎
+Std Dev: 26.4 탎
+Min: 667.5 탎
+Max: 839.3 탎
+Valid measurements: 100/101 trials attempted
+Valid latency range: 450 - 900 탎

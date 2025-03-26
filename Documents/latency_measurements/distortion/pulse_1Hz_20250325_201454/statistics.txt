@@ -1,0 +1,9 @@
+Latency Statistics for distortion with pulse at 1Hz:
+Measurement timestamp: 20250325_201454
+
+Mean: 509.1 탎
+Std Dev: 8.8 탎
+Min: 452.5 탎
+Max: 522.3 탎
+Valid measurements: 100/166 trials attempted
+Valid latency range: 450 - 900 탎
