@@ -1,0 +1,22 @@
+SNR Statistics for bypass with sine at 1kHz:
+Test signal amplitude: 10.0 Vpp
+Test date/time: 2025-03-31 18:28:39
+
+Mean Input SNR (dB): 52.89
+Std Dev Input SNR (dB): 0.25
+Mean Output SNR (dB): 68.85
+Std Dev Output SNR (dB): 0.24
+Mean SNR Change (dB): 15.95
+Std Dev SNR Change (dB): 0.27
+Mean Input THD (dB): -36.48
+Mean Output THD (dB): -44.76
+Mean Input Vpp (V): 1.89
+Mean Output Vpp (V): 11.78
+Valid Measurements: 5/5
+Test Date/Time: 2025-03-31 18:28:39
+Mean Corrected Input SNR (dB): nan
+Std Dev Corrected Input SNR (dB): nan
+Mean Corrected Output SNR (dB): nan
+Std Dev Corrected Output SNR (dB): nan
+Mean Corrected SNR Change (dB): nan
+Std Dev Corrected SNR Change (dB): nan
